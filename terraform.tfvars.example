@@ -1,0 +1,45 @@
+# prefix for resources
+stack_name = "my-k3s"
+
+# Number of server nodes allocated using EC2 reserved instances
+server_reserved_instances_count = 0
+# Number of server nodes allocated using EC2 spot instances
+server_spot_instances_count     = 1
+
+# Number of agent nodes allocated using EC2 reserved instances
+agent_reserved_instances_count  = 0
+# Number of agent nodes allocated using EC2 spot instances
+agent_spot_instances_count      = 0
+
+# Extra tags to add to all the resources
+#tags = {
+#  "key": "value"
+#}
+
+# a SSH public key for accessing the machines
+authorized_keys = [
+  "ssh-rsa AAAAB3NzaC1yc2EA...",
+]
+
+# List of VPC IDs to join via VPC peer link
+#peer_vpc_ids = ["vpc-id1", "vpc-id2"]
+
+# Name of the IAM profile to associate to server nodes.
+# Leave empty to have terraform create one.
+# This is required to have AWS CPI support working properly.
+#
+# Note well: you must  have the right set of permissions.
+# iam_profile_server = "k8s-control-plane-profile"
+
+# Name of the IAM profile to associate to agent nodes
+# Leave empty to have terraform create one.
+# This is required to have AWS CPI support working properly.
+#
+# Note well: you must  have the right set of permissions.
+# iam_profile_agent = "k8s-agent-profile"
+
+# Use specific Availibility Zone
+#availability_zones_filter= {
+#    name   = "zone-name"
+#    values = ["eu-west-3c"]
+#}
